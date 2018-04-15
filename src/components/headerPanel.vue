@@ -1,11 +1,11 @@
 <template>
-  <div>
-    <v-toolbar fixed class="" dark>
+  <div class="">
+    <v-toolbar fixed dark class="header">
       <v-toolbar-side-icon class="hidden-md-and-up" @click="toggleDrawer"> </v-toolbar-side-icon>
-      <v-avatar size="52px">
-        <img src="../assets/logo_white.jpg">
+      <v-avatar size="63px" class="hidden-sm-and-down" >
+        <img src="../assets/logo_black.jpg">
       </v-avatar>
-      <v-toolbar-title class="mr-4" fixed>
+      <v-toolbar-title class="barTitle" fixed>
         <router-link to="/" class="home headerLink">
           <span>
             Jazz Illustrators
@@ -24,10 +24,11 @@
 
       <v-spacer></v-spacer>
 
-      <v-toolbar-items class="hidden-sm-and-down">
+      <v-toolbar-items class="hidden-sm-and-down m-auto">
         <v-btn
           flat
           dark
+          to="#"
           class="headerLink">
           Home
         </v-btn>
@@ -61,17 +62,17 @@
       absolute
       hide-overlay
      >
-       <v-list class="pa-1">
-         <v-list-tile avatar>
-           <v-list-tile-avatar>
-             <img src="../assets/logo_black.jpg">
+       <v-list class="pa-0">
+         <v-list-tile avatar class="listTitle pa-0">
+           <v-list-tile-avatar size="55px" class="mt-3">
+             <img src="../assets/logo_white.jpg">
            </v-list-tile-avatar>
-           <v-list-tile-content>
-             <v-list-tile-title>Jazz Illustrators</v-list-tile-title>
+           <v-list-tile-content class="pa-1" style="">
+             <v-list-tile-title class="ml-3 mt-3 pl-1 pr-1" style="font-size: 22px;">Jazz Illustrators</v-list-tile-title>
            </v-list-tile-content>
          </v-list-tile>
        </v-list>
-       <v-list class="pt-0" dense>
+       <v-list class="pt-0" >
          <v-divider></v-divider>
          <v-list-tile v-for="item in items" :key="item.title">
            <!-- <v-list-tile-action>
@@ -131,7 +132,31 @@ export default {
 </script>
 <style scoped>
 .headerLink, .headerLink:hover{
-  /* border: 1px solid red; */
-  text-decoration: none
+  text-decoration: none;
+}
+.headerLink {
+  color: white;
+}
+.headerLink:hover {
+  color: #ffffb3 !important;
+}
+.headerLink:active {
+  color: #ffffb3 !important;
+}
+.home {
+  font-family: 'Permanent Marker', cursive !important;
+  color: #ffffff !important;
+}
+
+.barTitle {
+  font-family: 'Great Vibes', cursive !important;
+  font-weight: bold;
+  font-size: 28px;
+  color: #ffffff;
+  margin: ;
+  height: 55px;
+}
+.listTitle {
+  height: 75px;
 }
 </style>
